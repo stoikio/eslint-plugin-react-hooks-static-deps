@@ -1,0 +1,16 @@
+{
+  "name": "eslint-plugin-react-hooks-static-deps",
+  "version": "0.0.0-dev",
+  "main": "./dist/index.min.js",
+  "license": "MIT",
+  "devDependencies": {
+    "terser": "^5.10.0"
+  },
+  "scripts": {
+    "build": "mkdir -p dist && terser src/index.js --mangle --compress --comments false > ./dist/index.min.js",
+    "build:clean": "rm -rf ./dist"
+  },
+  "files": [
+    "dist/**/*"
+  ]
+}
