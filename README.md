@@ -10,7 +10,7 @@ A custom ESLint rule to allow static deps in React Hooks ⚛️
 
 `react-hooks/exhaustive-deps` is a really nice ESLint rule to avoid forgetting dependencies in React hooks like `useCallback` and `useMemo`.
 
-However, it can become really annoying, especially when you know that one of the "missing" dependencies comes from a custom hook you wrote, and whose return value won't change (if it's a function for example).
+However, it can become really annoying, especially when you know that one of the "missing" dependencies comes from a custom hook you wrote, and whose return value will likely never change (if it's a function for example).
 
 **This package allows you to declare which hooks return values should be ignored in `exhaustive-deps` checks.**
 
