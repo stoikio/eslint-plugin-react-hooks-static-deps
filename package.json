@@ -1,14 +1,21 @@
 {
   "name": "eslint-plugin-react-hooks-static-deps",
   "version": "0.0.0-dev",
+  "description": "A custom ESLint rule to allow static deps in React Hooks",
   "main": "./dist/index.min.js",
   "license": "MIT",
-  "devDependencies": {
-    "terser": "^5.10.0"
+  "author": "Stoïk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stoikio/eslint-plugin-react-hooks-static-deps.git"
   },
+  "homepage": "https://github.com/stoikio/eslint-plugin-react-hooks-static-deps#readme",
   "scripts": {
     "build": "mkdir -p dist && terser src/index.js --mangle --compress --comments false > ./dist/index.min.js",
     "build:clean": "rm -rf ./dist"
+  },
+  "devDependencies": {
+    "terser": "^5.10.0"
   },
   "files": [
     "dist/**/*"
