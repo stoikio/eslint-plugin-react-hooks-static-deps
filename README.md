@@ -6,6 +6,14 @@
 
 A custom ESLint rule to allow static deps in React Hooks ⚛️
 
+## Motivation
+
+`react-hooks/exhaustive-deps` is a really nice ESLint rule to avoid forgetting dependencies in React hoks like `useCallback` and `useMemo`.
+
+However, it can become really annoying, especially when you know that one of the "missing" dependencies comes from a custom hook you wrote, and whose return value won't change (if it's a function for example).
+
+**This package allows you to declare which hooks return values should be ignored in `exhaustive-deps` checks.**
+
 ## Installation
 
 ```sh
@@ -51,12 +59,12 @@ yarn add -D eslint-plugin-react-hooks-static-deps
       {
         staticHooks: {
           // the whole return value of the hook will be considered static
-          useNavigate: true,
+          useHook: true,
 
-          // for hooks that return an array: only the second item return by the hook will be considered static
-          useUser: [false, true],
+          // for hooks that return an array: here only the second item return by the hook will be considered static
+          useArrayHook: [false, true],
 
-          // for hooks that return an object, only the property prop1 will be considered static
+          // for hooks that return an object: here only the property prop1 will be considered static
           useObjectHook : {
             prop1: true,
             prop2: false
